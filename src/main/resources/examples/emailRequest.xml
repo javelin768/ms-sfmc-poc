@@ -1,0 +1,24 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Header>
+    <fueloauth>YOUR_ACCESS_TOKEN</fueloauth>
+ </Header>
+ <Body>
+   <CreateRequest xmlns="http://exacttarget.com/wsdl/partnerAPI">
+    <Objects xsi:type="TriggeredSend">
+      <PartnerKey xsi:nil="true"/>
+      <ObjectID xsi:nil="true"/>
+      <TriggeredSendDefinition>
+       <PartnerKey xsi:nil="true"/>
+       <ObjectID xsi:nil="true"/>
+       <CustomerKey>Definition_Key</CustomerKey>
+      </TriggeredSendDefinition>
+      <Subscribers>
+       <PartnerKey xsi:nil="true"/>
+       <ObjectID xsi:nil="true"/>
+       <EmailAddress>t.chandra2209@gmail.com</EmailAddress>
+       <SubscriberKey>t.chandra2209@gmail.com</SubscriberKey>
+      </Subscribers>
+    </Objects>
+   </CreateRequest>
+ </Body>
+</Envelope>
