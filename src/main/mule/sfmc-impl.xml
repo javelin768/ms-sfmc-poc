@@ -7,8 +7,9 @@ http://www.mulesoft.org/schema/mule/sfdc-marketing-cloud http://www.mulesoft.org
 http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<sfdc-marketing-cloud:config name="Salesforce_Marketing_Cloud_Config" doc:name="Salesforce Marketing Cloud Config" doc:id="aab416e6-335f-4c66-a846-4896fe8c011b" >
-		<sfdc-marketing-cloud:oauth-client-credentials-connection serviceUrl="https://mcwhv7sn12jx7rtrxzgynqzh6pqm.soap.marketingcloudapis.com/Service.asmx" connectionTimeout="2" connectionTimeoutUnit="MINUTES">
-			<sfdc-marketing-cloud:oauth-client-credentials clientId="test" clientSecret="test" tokenUrl="https://mcwhv7sn12jx7rtrxzgynqzh6pqm.auth.marketingcloudapis.com/v2/token" scopes="email_send" />
+		<sfdc-marketing-cloud:oauth-client-credentials-connection serviceUrl="https://mcwhv7sn12jx7rtrxzgynqzh6pqm.soap.marketingcloudapis.com/Service.asmx" connectionTimeout="2" connectionTimeoutUnit="MINUTES" wsdlUrl="etframework1.wsdl">
+			<reconnection />
+			<sfdc-marketing-cloud:oauth-client-credentials clientId="banqkg8d145eayn4cpq8huzk" clientSecret="3igtOSGJCi75MpH5QFc62J51" tokenUrl="https://mcwhv7sn12jx7rtrxzgynqzh6pqm.auth.marketingcloudapis.com/v2/token" scopes="email_send" />
 		</sfdc-marketing-cloud:oauth-client-credentials-connection>
 	</sfdc-marketing-cloud:config>
 	<flow name="sfmc-implFlow" doc:id="b078e5f6-89df-4207-9f71-aeea626f5c50" >
@@ -38,10 +39,10 @@ output application/java
 ---
 [{
 	Subscribers: [{
-		Attributes: {
+		/*Attributes: {
 			"Name" : "FirstName",
 			"Value" : "Titu"
-		},
+		},*/
 		EmailAddress: payload.triggeredSend.subscribers.emailAddress,
 		SubscriberKey: payload.triggeredSend.subscribers.subscriberKey
 	}],
